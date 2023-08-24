@@ -8,7 +8,7 @@ let browser: Browser
 let context: BrowserContext
 
 BeforeAll(async function () {
-    browser = await chromium.launch({ headless: !true });
+    browser = await chromium.launch({ headless: true });
     const session = await browser.newBrowserCDPSession();
     const version = await session.send('Browser.getVersion');
     fs.writeFile("platform_details.json",
