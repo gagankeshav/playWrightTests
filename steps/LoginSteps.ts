@@ -30,7 +30,7 @@ Then('User should get error message as {string}', async function (login_error) {
     await expect(loginPage.errorMessage).toContainText(login_error)
 })
 
-Then('User should be logged into WebApp', {timeout: 60 * 10000},async function () {
-    await expect(homePage.navTabs).toBeVisible()
+Then('User should be logged into WebApp',async function () {
+    await expect(homePage.accountSummaryTab).toBeVisible()
 })
 

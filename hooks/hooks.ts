@@ -1,4 +1,4 @@
-import { BeforeAll, AfterAll, After, Before, Status} from '@cucumber/cucumber'
+import { BeforeAll, AfterAll, After, Before, Status, setDefaultTimeout} from '@cucumber/cucumber'
 import { chromium, Page, Browser, BrowserContext  } from '@playwright/test'
 import { pageFixture } from './pageFixture'
 const fs = require("fs-extra");
@@ -6,6 +6,8 @@ const fs = require("fs-extra");
 let page: Page
 let browser: Browser
 let context: BrowserContext
+
+setDefaultTimeout(60 * 1000);
 
 BeforeAll(async function () {
     browser = await chromium.launch({ headless: true });
