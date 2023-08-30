@@ -18,8 +18,8 @@ BeforeAll(async function () {
 })
 
 Before(async function()  {
-    // Viewport null to ensure browser opens in 1080P
-    context = await browser.newContext({viewport: null})
+    // Viewport to ensure browser opens in 1080P
+    context = await browser.newContext({viewport: {width: 1920, height: 1080}, ignoreHTTPSErrors: true})
     page = await context.newPage()
     pageFixture.page = page;
 })
